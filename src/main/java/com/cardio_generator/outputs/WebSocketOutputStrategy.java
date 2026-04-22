@@ -5,16 +5,34 @@ import org.java_websocket.server.WebSocketServer;
 
 import java.net.InetSocketAddress;
 
+/**
+ * Sends patient data to all connected WebSocket clients.
+ * Uses the Java-WebSocket library to create a simple WebSocket server.
+ */
 public class WebSocketOutputStrategy implements OutputStrategy {
 
     private WebSocketServer server;
 
+    /**
+     * Creates a WebSocket server on the specified port and starts it.
+     *
+     * @param port the port number to listen on
+     */
     public WebSocketOutputStrategy(int port) {
         server = new SimpleWebSocketServer(new InetSocketAddress(port));
         System.out.println("WebSocket server created on port: " + port + ", listening for connections...");
         server.start();
     }
 
+    /**
+     * Sends a single data entry to all connected WebSocket clients.
+     * The message is formatted as: patientId, timestamp, label, data
+     *
+     * @param patientId the ID of the patient
+     * @param timestamp the time when the data was generated
+     * @param label the type of data
+     * @param data the actual data value
+     */
     @Override
     public void output(int patientId, long timestamp, String label, String data) {
         String message = String.format("%d,%d,%s,%s", patientId, timestamp, label, data);
@@ -24,6 +42,10 @@ public class WebSocketOutputStrategy implements OutputStrategy {
         }
     }
 
+    /**
+     * Internal WebSocket server implementation.
+     * Handles client connections, disconnections and errors.
+     */
     private static class SimpleWebSocketServer extends WebSocketServer {
 
         public SimpleWebSocketServer(InetSocketAddress address) {
