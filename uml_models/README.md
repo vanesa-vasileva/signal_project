@@ -25,3 +25,13 @@ Three concrete subclasses extend DataListener. The TCPDataListener stores a priv
 Once raw data arrives, it is passed to the DataSourceAdapter, which bridges the transport and storage layers. This class holds private references to both a parser and a storage component. Its public methods handle raw input and save the resulting structured record — separating parsing concerns from persistence concerns. The DataParser interface defines a parse method that accepts a raw string and produces a structured patient record, as well as a method to identify the expected format. Two concrete implementations are provided: JsonParser, which uses an internal object mapper, and CsvParser, which relies on a configurable delimiter character. Both produce a PatientData object containing a patient identifier, a vital sign value, a type label, and a timestamp.
 The multiplicity annotations in the diagram is as such— one listener to one adapter, one adapter to one parser. This design supports extensibility, as adding a new protocol or data format requires only a new subclass with no changes to core logic.
 
+This repository includes UML class diagrams for four subsystems of the 
+Cardiovascular Health Monitoring System, located in the 
+[uml_models](./uml_models) directory.
+
+The four diagrams cover:
+- Alert Generation System
+- Data Storage System
+- Patient Identification System
+- Data Access Layer
+  
