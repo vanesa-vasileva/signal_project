@@ -27,7 +27,7 @@ The multiplicity annotations in the diagram is as such— one listener to one ad
 
 This repository includes UML class diagrams for four subsystems of the 
 Cardiovascular Health Monitoring System, located in the 
-[uml_models](./uml_models) directory.
+uml_models folder.
 
 The four diagrams cover:
 - Alert Generation System
