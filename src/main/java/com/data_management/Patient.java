@@ -12,7 +12,9 @@ import java.util.List;
 public class Patient {
     private int patientId;
     private List<PatientRecord> patientRecords;
-
+    public int getPatientId() {
+        return patientId;
+    }
     /**
      * Constructs a new Patient with a specified ID.
      * Initializes an empty list of patient records.
@@ -51,9 +53,7 @@ public class Patient {
      * @return a list of PatientRecord objects that fall within the specified time
      *         range
      */
-    // TODO Implement and test this method
-   // public List<PatientRecord> getRecords(long startTime, long endTime) {
-     //   return List.of(); was this and i made it this-
+
         public List<PatientRecord> getRecords(long startTime, long endTime) {
             List<PatientRecord> filteredRecords = new ArrayList<>();
             for (PatientRecord record : this.patientRecords) {
