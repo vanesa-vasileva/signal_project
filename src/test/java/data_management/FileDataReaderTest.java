@@ -25,7 +25,7 @@ class FileDataReaderTest {
 
     @BeforeEach
     void setUp() {
-        storage = new DataStorage();
+        storage = DataStorage.getInstance();
     }
 
     private void createTempFile(String filename, String content) throws IOException {
