@@ -1,13 +1,16 @@
 package com.data_management;
 
-import java.io.IOException;
-
+/**
+ * Defines a contract for reading patient data from different sources.
+ * Implementations can read from files, WebSocket streams, databases, etc.
+ */
 public interface DataReader {
+
     /**
-     * Reads data from a specified source and stores it in the data storage.
-     * 
-     * @param dataStorage the storage where data will be stored
-     * @throws IOException if there is an error reading the data
+     * Reads data from the source and stores it in the provided DataStorage.
+     *
+     * @param dataStorage the storage where the read data will be stored
+     * @throws Exception if an error occurs during reading (e.g., connection issues, parsing errors)
      */
-    void readData(DataStorage dataStorage) throws IOException;
+    void readData(DataStorage dataStorage) throws Exception;
 }
