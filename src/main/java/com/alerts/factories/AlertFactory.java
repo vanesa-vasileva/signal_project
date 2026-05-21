@@ -7,7 +7,9 @@ import com.alerts.Alert;
  * Implementations create specific types of alerts (e.g., blood pressure, ECG).
  */
 public interface AlertFactory {
-
+    // Modelled as an interface rather than a base class: the factories share no
+// common state, so an interface keeps them decoupled while still defining
+// the createAlert contract required by the Factory Method pattern.
     /**
      * Creates a new Alert instance.
      *
