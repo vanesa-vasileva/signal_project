@@ -59,7 +59,7 @@
                 <version>3.0.0</version>
             </plugin>
 
-            <!-- Generates code coverage report -->
+
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
