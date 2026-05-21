@@ -45,7 +45,6 @@ public class AlertGenerator {
         this.dataStorage = dataStorage;
     }
 
-    // ── Public API ────────────────────────────────────────────────────────────
 
     /**
      * Runs all alert checks against the supplied patient's records.
@@ -83,7 +82,6 @@ public class AlertGenerator {
         return List.copyOf(triggeredAlerts);
     }
 
-    // ── Internal alert checks ─────────────────────────────────────────────────
 
     /**
      * Triggers an alert if three consecutive readings each differ
@@ -238,8 +236,6 @@ public class AlertGenerator {
             }
         }
     }
-
-    // ── Utility ───────────────────────────────────────────────────────────────
 
     /**
      * Records an alert and prints it to the console.
