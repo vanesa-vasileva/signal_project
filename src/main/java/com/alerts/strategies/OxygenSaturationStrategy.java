@@ -21,7 +21,7 @@ public class OxygenSaturationStrategy implements AlertStrategy {
      */
     @Override
     public Alert checkAlert(String patientId, long timestamp, double value) {
-        if (value < 90) {
+        if (value < 92) {
             return factory.createAlert(patientId, "Low oxygen saturation: " + value + "%", timestamp);
         }
         return null;

@@ -21,7 +21,7 @@ public class BloodPressureStrategy implements AlertStrategy {
      */
     @Override
     public Alert checkAlert(String patientId, long timestamp, double value) {
-        if (value > 180 || value < 50) {
+        if (value > 180 || value < 90) {
             return factory.createAlert(patientId, "Critical blood pressure: " + value, timestamp);
         }
         return null;
